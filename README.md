@@ -164,5 +164,5 @@ associados a clientes, estão estáticos na aplicação em um MAP. Os CEPs dispo
 
 * http DELETE - http://localhost:8080/api/enderecoscliente/1
 
-* returns http 204
+* returna http 204
 * retorna http 404 se não encontrar endereço do cliente
