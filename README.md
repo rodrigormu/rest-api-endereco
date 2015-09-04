@@ -42,8 +42,8 @@ associados a clientes, estão estáticos na aplicação em um MAP. Os CEPs dispo
 ### Cenários de Testes ###
 Os cenários de testes no estilo BDD foram escritos em Groovy utilizando 
 [Spock](https://code.google.com/p/spock/) como framework.
-Os cenários gerados foram armazenados para consulta e podem ser acessados
-clicando [aqui](https://github.com/rodrigormu/rest-api-endereco/tree/master/sample-spock-reports/index.html)
+O relatório de execução é gerado a cada execução dos testes, por isso, não estão versionados aqui.
+Após execução dos testes acesse o diretório build/spock-reports/index.html para visualiza-los.
 
 ## Exemplos de uso da Api ##
 
