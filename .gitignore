@@ -2,3 +2,9 @@
 /.idea
 /target
 /*.iml
+*.class
+*.jar
+*.war
+*.ear
+# Package Files #
+
