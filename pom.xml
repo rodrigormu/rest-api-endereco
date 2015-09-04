@@ -5,8 +5,7 @@
 
     <groupId>com.br.rmu</groupId>
     <artifactId>rest-api-endereco</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <version>0.1.0</version>
 
     <name>Rest Api Endereço</name>
     <description>Rest Api Endereço</description>
@@ -21,7 +20,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>1.7</java.version>
         <spock.version>1.0-groovy-2.4</spock.version>
     </properties>
 

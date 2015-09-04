@@ -1,10 +1,9 @@
 package br.com.rmu.restapiendereco.localizadorcep.domain.model;
 
 import br.com.rmu.restapiendereco.shared.domain.model.Cep;
-import org.apache.commons.lang3.Validate;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 /**
  * Representa um endereço não vinculado a cliente.
@@ -13,12 +12,14 @@ import java.util.Objects;
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Long id;
     @Embedded
     private Cep cep;
     private String rua;
     private String cidade;
     private String estado;
+    private String bairro;
 
     /**
      * Construtor somente para JPA. Não deve ser utilizado
@@ -32,19 +33,25 @@ public class Endereco {
      *
      * @param pCep    - CEP do endereço
      * @param pRua    - Nome da rua, avenida, alameda, etc
+     * @param pBairro - Nome do Bairro
      * @param pCidade - Nome da Cidade
      * @param pEstado - Sigla do estado
      */
-    public Endereco(Cep pCep, String pRua, String pCidade, String pEstado) {
+    public Endereco(Cep pCep, String pRua, String pBairro, String pCidade, String pEstado) {
         this();
-        Validate.notNull(pCep, "CEP é obrigatório.");
-        Validate.notBlank(pRua, "Rua é obrigatório.");
-        Validate.notBlank(pCidade, "Cidade é obrigatório.");
-        Validate.notBlank(pEstado, "Estado é obrigatório.");
         this.cep = pCep;
         this.rua = pRua;
         this.cidade = pCidade;
         this.estado = pEstado;
+        this.bairro = pBairro;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
     public Long getId() {

@@ -25,12 +25,12 @@ public class HashMapEnderecoDao implements IEnderecoDao, IEnderecosRepository {
         List<String> ceps = Arrays.asList("10000000", "13000000", "13100000", "13040000"
                 , "13045000", "13046100", "13047120", "13045909");
         for (String cep : ceps) {
-            dados.put(cep, novaInstanciaDeEndereco(cep, "Rua do " + cep, "Cidade do cep " + cep, "Estado do cep " + cep));
+            dados.put(cep, novaInstanciaDeEndereco(cep, "Rua do " + cep, "Bairro do cep " + cep, "Cidade do cep " + cep, "Estado do cep " + cep));
         }
     }
 
-    private Endereco novaInstanciaDeEndereco(String pCep, String pRua, String pCidade, String pEstado) {
-        return new Endereco(new Cep(pCep), pRua, pCidade, pEstado);
+    private Endereco novaInstanciaDeEndereco(String pCep, String pRua, String pBairro, String pCidade, String pEstado) {
+        return new Endereco(new Cep(pCep), pRua, pBairro, pCidade, pEstado);
     }
 
     @Override
