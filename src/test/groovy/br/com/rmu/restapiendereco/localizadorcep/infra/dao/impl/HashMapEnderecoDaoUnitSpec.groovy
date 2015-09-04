@@ -18,24 +18,26 @@ class HashMapEnderecoDaoUnitSpec extends Specification {
     private IEnderecoDao enderecoDao;
 
     def "A busca deve retornar o endereço quando informado cep existente"() {
-        when:
+        given: "Eu tenho um endereço com o cep 13045909"
+        when: "Eu chamar a busca por cep passando 13045909 como parâmetro"
         Endereco endereco = enderecoDao.findByCep(new Cep("13045909"))
-        then:
+        then: "Deve retornar o endereço"
         endereco != null
         endereco.cep.codigo == "13045909"
     }
 
     def "A busca deve retornar o null quando informado cep inexistente"() {
-        when:
+        given: "Eu não tenho um endereço com o cep 12345678"
+        when: "Eu chamar a busca por cep passando 12345678 como parâmetro"
         Endereco endereco = enderecoDao.findByCep(new Cep("12345678"))
-        then:
+        then:"Deve retornar null"
         endereco == null
     }
 
     def "A busca deve retornar o null quando informado cep null"() {
-        when:
+        when: "Eu chamar a busca por cep passando null como parâmetro "
         Endereco endereco = enderecoDao.findByCep(null)
-        then:
+        then: "Deve retornar null"
         endereco == null
     }
 }

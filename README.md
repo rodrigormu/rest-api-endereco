@@ -8,7 +8,7 @@ Global por CEP e CRUD de Endereço de Cliente.
 ## Arquitetura ##
 
 A arquitetura utilizada é baseada na Layered Architecture, com alguns conceitos de
-DDD, como a proposto por Eric Evans no projeto DDD Sample [here](http://dddsample.sourceforge.net/architecture.html)
+DDD, como a proposto por Eric Evans no projeto [DDD Sample](http://dddsample.sourceforge.net/architecture.html)
 Arquitetura organiza o software de forma bem simples em três camadas horizontais 
 suportadas por uma quarta camada vertical de infraestrutura. 
 
@@ -38,6 +38,12 @@ associados a clientes, estão estáticos na aplicação em um MAP. Os CEPs dispo
 
 ### Executar testes ###
 > mvn test
+
+### Cenários de Testes ###
+Os cenários de testes no estilo BDD foram escritos em Groovy utilizando 
+[Spock](https://code.google.com/p/spock/) como framework.
+Os cenários gerados foram armazenados para consulta e podem ser acessados
+clicando [aqui](https://github.com/rodrigormu/rest-api-endereco/tree/master/sample-spock-reports/index.html)
 
 ## Exemplos de uso da Api ##
 

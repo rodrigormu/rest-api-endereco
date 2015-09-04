@@ -1,0 +1,674 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<style>body {
+  font-family: Helvetica;
+}
+
+table {
+  margin: 5px;
+}
+
+div.date-test-ran {
+  font-size: small;
+  font-style: italic;
+}
+
+table.features-table {
+  width: 800px;
+}
+
+table.summary-table {
+  width: 800px;
+  text-align: left;
+  font-weight: bold;
+  font-size: small;
+}
+
+table.summary-table th {
+  background: lightblue;
+  padding: 6px;
+}
+
+table.summary-table td {
+  background: #E0E0E0;
+  padding: 6px;
+}
+
+pre.narrative {
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: -1px;
+  color: #444;
+}
+
+.feature-description {
+  font-size: large;
+  background: lightblue;
+  padding: 4px;
+}
+
+.feature-toc-error {
+	color: #F89A4F;
+}
+
+.feature-toc-failure {
+	color: #FF8080;
+}
+
+.feature-toc-ignored {
+	color: lightgray;
+}
+
+.feature-toc-pass {
+	color: green;
+}
+
+.feature-description.error {
+  background: #F89A4F;
+}
+
+.feature-description.failure {
+  background: #FF8080;
+}
+
+.feature-description.ignored {
+  background: lightgray;
+}
+
+.feature-description.ignored .reason {
+  color: black;
+  font-style: italic;
+  font-size: small;
+}
+
+div.issues {
+  color: black;
+  font-weight: bold;
+  font-size: small;
+}
+
+div.problem-description {
+  padding: 10px;
+  background: pink;
+  border-radius: 10px;
+}
+
+div.problem-header {
+  font-weight: bold;
+  color: red;
+}
+
+div.problem-list {
+  
+}
+
+table.ex-table th {
+  background: lightblue;
+  padding: 0px 5px 0px 5px;
+}
+
+table.ex-table td {
+  background: #E0E0E0;
+  padding: 0px 5px 0px 5px;
+}
+
+table td {
+  min-width: 50px;
+}
+
+col.block-kind-col {
+  width: 70px;
+}
+
+span.spec-header {
+  font-weight: bold;
+}
+
+div.spec-text {
+  /*color: green;*/
+}
+
+div.spec-status {
+  font-style: italic;
+}
+
+.ignored {
+  color: gray;
+}
+
+td.ex-result {
+  text-align: center;
+  background: white !important;
+}
+
+.ex-pass {
+  color: darkgreen;
+}
+
+.ex-fail {
+  color: red;
+  font-weight: bold;
+}
+
+div.block-kind {
+  margin: 2px;
+  font-style: italic;
+}
+
+div.block-text {
+
+}
+
+div.footer {
+  text-align: center;
+  font-size: small;
+}
+</style>
+</head>
+<body>
+<h2>Report for br.com.rmu.restapiendereco.enderecocliente.interfaces.restapi.CrudEnderecoClienteApiSpec</h2>
+<hr></hr>
+<div class='summary-report'>
+<h3>Summary:</h3>
+<div class='date-test-ran'>Created on Fri Sep 04 15:18:17 BRT 2015 by rodrigomunhoz</div>
+<table class='summary-table'>
+<thead>
+<th>Executed features</th>
+<th>Failures</th>
+<th>Errors</th>
+<th>Skipped</th>
+<th>Success rate</th>
+<th>Time</th>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100,0%</td>
+<td>16,551 seconds</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class='narrative'>EU, como usuário
+QUERO administrar meus dados de endereço
+PARA Incluir, Consultar, Atualizar, Deletar meu endereço</pre>
+<h3>Features:</h3>
+<table class='features-table'>
+<colgroup>
+<col class='block-kind-col'></col>
+<col class='block-text-col'></col>
+</colgroup>
+<tbody>
+<ul id='toc'>
+<li>
+<a href='#1614958375' class='feature-toc-pass'>Buscar um endereço informando ID inexistente</a>
+</li>
+<li>
+<a href='#-679068308' class='feature-toc-pass'>Buscar um endereço informando ID existente</a>
+</li>
+<li>
+<a href='#50772580' class='feature-toc-pass'>Alterar endereço informando ID inexistente</a>
+</li>
+<li>
+<a href='#1442206697' class='feature-toc-pass'>Alterar endereço informando ID existente</a>
+</li>
+<li>
+<a href='#794675401' class='feature-toc-pass'>Excluir endereço informando ID inexistente</a>
+</li>
+<li>
+<a href='#-988301426' class='feature-toc-pass'>Excluir endereço informando ID existente</a>
+</li>
+<li>
+<a href='#-96290844' class='feature-toc-pass'>Incluir endereço informando todos os campos obrigatórios</a>
+</li>
+<li>
+<a href='#-1982804968' class='feature-toc-pass'>Incluir endereço sem informar Cep</a>
+</li>
+<li>
+<a href='#-1982790072' class='feature-toc-pass'>Incluir endereço sem informar Rua</a>
+</li>
+<li>
+<a href='#-605043177' class='feature-toc-pass'>Incluir endereço sem informar Número</a>
+</li>
+<li>
+<a href='#-1054146790' class='feature-toc-pass'>Incluir endereço sem informar Cidade</a>
+</li>
+<li>
+<a href='#-987176612' class='feature-toc-pass'>Incluir endereço sem informar Estado</a>
+</li>
+</ul>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1614958375'>
+<span>Buscar um endereço informando ID inexistente</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Não exista um endereço com id 999</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu solicitar o endereço informando o ID 999</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 404</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-679068308'>
+<span>Buscar um endereço informando ID existente</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenho um endereço de cliente cadastrado</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu solicitar o endereço informando id existente</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 200</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<div class='block-text'>O body deve conter os dados do endereço</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='50772580'>
+<span>Alterar endereço informando ID inexistente</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Não exista um endereço com o id 999</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu solicitar alteração informando o id 999</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 404</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1442206697'>
+<span>Alterar endereço informando ID existente</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenho um endereco de cliente cadastrado</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Solicitar alteração informando o id desse endereco</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 200</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<div class='block-text'>A cidade e o complemento devem ter sido alterados</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='794675401'>
+<span>Excluir endereço informando ID inexistente</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Não exista um endereço com o id 999</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu solicitar exclusão informando o id 999</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 404</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-988301426'>
+<span>Excluir endereço informando ID existente</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenho um endereco de cliente cadastrado</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Solicitar exclusão informando o id desse endereco</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 204</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-96290844'>
+<span>Incluir endereço informando todos os campos obrigatórios</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Solicitar inclusão informando todos os campos obrigatórios</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 200</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<div class='block-text'>O body deve conter os dados do endereço</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1982804968'>
+<span>Incluir endereço sem informar Cep</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Solicitar inclusão sem informar o campo Cep que é obrigatório</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 400 com a mensagem 'enderecoDoCliente.cep.not.null' no body</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1982790072'>
+<span>Incluir endereço sem informar Rua</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Solicitar inclusão sem informar o campo Rua que é obrigatório</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 400 com a mensagem 'enderecoDoCliente.rua.not.blank' no body</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-605043177'>
+<span>Incluir endereço sem informar Número</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Solicitar inclusão sem informar o campo Número que é obrigatório</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 400 com a mensagem 'enderecoDoCliente.numero.not.null' no body</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1054146790'>
+<span>Incluir endereço sem informar Cidade</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Solicitar inclusão sem informar o campo Cidade que é obrigatório</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 400 com a mensagem 'enderecoDoCliente.cidade.not.blank' no body</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-987176612'>
+<span>Incluir endereço sem informar Estado</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Solicitar inclusão sem informar o campo Estado que é obrigatório</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve responder status 400 com a mensagem 'enderecoDoCliente.estado.not.blank' no body</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+</tbody>
+</table>
+<hr></hr>
+<div class='footer'>Generated by <a href='https://github.com/renatoathaydes/spock-reports'>Athaydes Spock Reports</a></div>
+</body>
+</html>

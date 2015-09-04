@@ -11,9 +11,9 @@ import spock.lang.Unroll
 class CepUnitSpec extends Specification {
     @Unroll
     def "Ao verificar se o CEP #cep é válido deve retornar #resultado"(cep, resultado) {
-        setup:
+        given: "Tenho uma instancia de CEP com o código #cep"
         Cep cepParaValidar = new Cep(cep)
-        expect:
+        expect: "Ao verificar se é válido deve retornar #resultado"
         cepParaValidar.isValido() == resultado
         where:
         cep          | resultado
@@ -28,12 +28,18 @@ class CepUnitSpec extends Specification {
     }
 
     def "Deve remover a formatação quando um cep formatado é informado"() {
-        String codigoFormatado = "13.0.45-0-00"
+        given: "Tenho uma instancia de CEP com formatação (13.045-000)"
+        String codigoFormatado = "13.045-000"
         String codigoSemFormatacao = "13045000"
+        when: "Eu solicitar a remoção da formatação"
+        then: "O cep deve ficar sem formatação (13045000)"
         Assert.assertEquals(codigoSemFormatacao, new Cep().removerFormatacaoCodigo(codigoFormatado))
     }
 
     def "Deve retornar null quando for solicitado remover a formatação de cep=null"() {
+        given: "Tenho uma instancia de CEP sem código"
+        when: "Quando eu solicitar a remoção da formatação"
+        then: "Deve retornar null"
         Assert.assertNull(new Cep().removerFormatacaoCodigo(null))
     }
 

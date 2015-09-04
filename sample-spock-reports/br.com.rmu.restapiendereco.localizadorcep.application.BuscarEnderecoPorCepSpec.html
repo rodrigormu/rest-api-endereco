@@ -1,0 +1,703 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<style>body {
+  font-family: Helvetica;
+}
+
+table {
+  margin: 5px;
+}
+
+div.date-test-ran {
+  font-size: small;
+  font-style: italic;
+}
+
+table.features-table {
+  width: 800px;
+}
+
+table.summary-table {
+  width: 800px;
+  text-align: left;
+  font-weight: bold;
+  font-size: small;
+}
+
+table.summary-table th {
+  background: lightblue;
+  padding: 6px;
+}
+
+table.summary-table td {
+  background: #E0E0E0;
+  padding: 6px;
+}
+
+pre.narrative {
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: -1px;
+  color: #444;
+}
+
+.feature-description {
+  font-size: large;
+  background: lightblue;
+  padding: 4px;
+}
+
+.feature-toc-error {
+	color: #F89A4F;
+}
+
+.feature-toc-failure {
+	color: #FF8080;
+}
+
+.feature-toc-ignored {
+	color: lightgray;
+}
+
+.feature-toc-pass {
+	color: green;
+}
+
+.feature-description.error {
+  background: #F89A4F;
+}
+
+.feature-description.failure {
+  background: #FF8080;
+}
+
+.feature-description.ignored {
+  background: lightgray;
+}
+
+.feature-description.ignored .reason {
+  color: black;
+  font-style: italic;
+  font-size: small;
+}
+
+div.issues {
+  color: black;
+  font-weight: bold;
+  font-size: small;
+}
+
+div.problem-description {
+  padding: 10px;
+  background: pink;
+  border-radius: 10px;
+}
+
+div.problem-header {
+  font-weight: bold;
+  color: red;
+}
+
+div.problem-list {
+  
+}
+
+table.ex-table th {
+  background: lightblue;
+  padding: 0px 5px 0px 5px;
+}
+
+table.ex-table td {
+  background: #E0E0E0;
+  padding: 0px 5px 0px 5px;
+}
+
+table td {
+  min-width: 50px;
+}
+
+col.block-kind-col {
+  width: 70px;
+}
+
+span.spec-header {
+  font-weight: bold;
+}
+
+div.spec-text {
+  /*color: green;*/
+}
+
+div.spec-status {
+  font-style: italic;
+}
+
+.ignored {
+  color: gray;
+}
+
+td.ex-result {
+  text-align: center;
+  background: white !important;
+}
+
+.ex-pass {
+  color: darkgreen;
+}
+
+.ex-fail {
+  color: red;
+  font-weight: bold;
+}
+
+div.block-kind {
+  margin: 2px;
+  font-style: italic;
+}
+
+div.block-text {
+
+}
+
+div.footer {
+  text-align: center;
+  font-size: small;
+}
+</style>
+</head>
+<body>
+<h2>Report for br.com.rmu.restapiendereco.localizadorcep.application.BuscarEnderecoPorCepSpec</h2>
+<hr></hr>
+<div class='summary-report'>
+<h3>Summary:</h3>
+<div class='date-test-ran'>Created on Fri Sep 04 15:18:19 BRT 2015 by rodrigomunhoz</div>
+<table class='summary-table'>
+<thead>
+<th>Executed features</th>
+<th>Failures</th>
+<th>Errors</th>
+<th>Skipped</th>
+<th>Success rate</th>
+<th>Time</th>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100,0%</td>
+<td>1,409 seconds</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Features:</h3>
+<table class='features-table'>
+<colgroup>
+<col class='block-kind-col'></col>
+<col class='block-text-col'></col>
+</colgroup>
+<tbody>
+<ul id='toc'>
+<li>
+<a href='#2025367148' class='feature-toc-pass'>Buscar endereço por CEP sem informa o CEP.</a>
+</li>
+<li>
+<a href='#-1077551575' class='feature-toc-pass'>Buscar endereço usando CEP inválido.</a>
+</li>
+<li>
+<a href='#-348280695' class='feature-toc-pass'>Buscar endereço com CEP que não possui endereço cadastrado</a>
+</li>
+<li>
+<a href='#1731991811' class='feature-toc-pass'>Buscar endereço com CEP que possui endereço cadastrado</a>
+</li>
+<li>
+<a href='#-895405859' class='feature-toc-pass'>Buscar endereço com CEP que possui endereço cadastrado deve retornar endereço mesmo quando o cep informado estiver formatado</a>
+</li>
+<li>
+<a href='#1231676037' class='feature-toc-pass'>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.047-129 / CEP RETORNADO = 13047120)</a>
+</li>
+<li>
+<a href='#-1494428583' class='feature-toc-pass'>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.046-198 / CEP RETORNADO = 13046100)</a>
+</li>
+<li>
+<a href='#-1535821023' class='feature-toc-pass'>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.045-768 / CEP RETORNADO = 13045000)</a>
+</li>
+<li>
+<a href='#529595614' class='feature-toc-pass'>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.048-987 / CEP RETORNADO = 13040000)</a>
+</li>
+<li>
+<a href='#-1220568415' class='feature-toc-pass'>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.199-999 / CEP RETORNADO = 13100000)</a>
+</li>
+<li>
+<a href='#-1189126808' class='feature-toc-pass'>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.999-999 / CEP RETORNADO = 13000000)</a>
+</li>
+<li>
+<a href='#-143995951' class='feature-toc-pass'>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 19.999-999 / CEP RETORNADO = 10000000)</a>
+</li>
+</ul>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='2025367148'>
+<span>Buscar endereço por CEP sem informa o CEP.</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar um endereço sem informa o CEP</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve ser lançada exceção informando que o CEP é obrigatório</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1077551575'>
+<span>Buscar endereço usando CEP inválido.</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Que o sistema valide o formato do CEP</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar um endereço informando o CEP 1304500</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve ser lançada exceção informando que o CEP é inválido</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-348280695'>
+<span>Buscar endereço com CEP que não possui endereço cadastrado</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenho endereço cadastrado para o CEP 13045909</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar endereço pelo CEP 99999990</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve lançar exceçãoinformando que não foi encontrado registro</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1731991811'>
+<span>Buscar endereço com CEP que possui endereço cadastrado</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenho endereço cadastrado para o CEP 13045909</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar endereço pelo CEP 13045909</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve retornar o endereco encontrado</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-895405859'>
+<span>Buscar endereço com CEP que possui endereço cadastrado deve retornar endereço mesmo quando o cep informado estiver formatado</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenho endereço cadastrado para o CEP 13045909</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar endereço pelo CEP 13.045-909</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve retornar o endereco encontrado</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1231676037'>
+<span>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.047-129 / CEP RETORNADO = 13047120)</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenha endereços cadastrados para os CEPs (00000000, 10000000, 13000000, 13100000, 13040000, 13045000, 13046100, 13047120)</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar endereço pelo CEP 13.047-129</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve retornar o endereco encontrado</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1494428583'>
+<span>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.046-198 / CEP RETORNADO = 13046100)</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenha endereços cadastrados para os CEPs (00000000, 10000000, 13000000, 13100000, 13040000, 13045000, 13046100, 13047120)</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar endereço pelo CEP 13.046-198</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve retornar o endereco encontrado</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1535821023'>
+<span>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.045-768 / CEP RETORNADO = 13045000)</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenha endereços cadastrados para os CEPs (00000000, 10000000, 13000000, 13100000, 13040000, 13045000, 13046100, 13047120)</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar endereço pelo CEP 13.045-768</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve retornar o endereco encontrado</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='529595614'>
+<span>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.048-987 / CEP RETORNADO = 13040000)</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenha endereços cadastrados para os CEPs (00000000, 10000000, 13000000, 13100000, 13040000, 13045000, 13046100, 13047120)</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar endereço pelo CEP 13.048-987</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve retornar o endereco encontrado</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1220568415'>
+<span>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.199-999 / CEP RETORNADO = 13100000)</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenha endereços cadastrados para os CEPs (00000000, 10000000, 13000000, 13100000, 13040000, 13045000, 13046100, 13047120)</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar endereço pelo CEP 13.199-999</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve retornar o endereco encontrado</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1189126808'>
+<span>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 13.999-999 / CEP RETORNADO = 13000000)</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenha endereços cadastrados para os CEPs (00000000, 10000000, 13000000, 13100000, 13040000, 13045000, 13046100, 13047120)</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar endereço pelo CEP 13.999-999</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve retornar o endereco encontrado</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-143995951'>
+<span>Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = 19.999-999 / CEP RETORNADO = 10000000)</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>Eu tenha endereços cadastrados para os CEPs (00000000, 10000000, 13000000, 13100000, 13040000, 13045000, 13046100, 13047120)</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>Eu buscar endereço pelo CEP 19.999-999</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>Deve retornar o endereco encontrado</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+</tbody>
+</table>
+<hr></hr>
+<div class='footer'>Generated by <a href='https://github.com/renatoathaydes/spock-reports'>Athaydes Spock Reports</a></div>
+</body>
+</html>

@@ -155,8 +155,7 @@ class CrudEnderecoClienteApiSpec extends Specification {
 
     @Unroll
     def "Incluir endereço sem informar #propriedade"(novoEndereco, propriedade, mensagemDeErro) {
-        when:
-        "Solicitar inclusão sem informar o campo $propriedade que é obrigatório"
+        when: "Solicitar inclusão sem informar o campo #propriedade que é obrigatório"
         ParameterizedTypeReference<Collection<Erro>> typeReference = new ParameterizedTypeReference<Collection<Erro>>() {
         }
         HttpEntity<EnderecoDoCliente> enderecoDoBody = new HttpEntity<>(novoEndereco)
@@ -165,10 +164,8 @@ class CrudEnderecoClienteApiSpec extends Specification {
                 HttpMethod.POST,
                 enderecoDoBody,
                 typeReference)
-        then: "Deve responder status 400"
+        then: "Deve responder status 400 com a mensagem '#mensagemDeErro' no body"
         retorno.statusCode.value() == HttpStatus.SC_BAD_REQUEST
-        and:
-        "O body deve conter mensagem de erro com a mensagem $mensagemDeErro"
         retorno.body.first().mensagem == mensagemDeErro
         where:
         novoEndereco                                                                | propriedade | mensagemDeErro

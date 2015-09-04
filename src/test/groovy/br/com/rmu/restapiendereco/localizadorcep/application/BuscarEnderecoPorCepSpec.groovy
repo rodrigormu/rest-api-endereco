@@ -8,6 +8,7 @@ import br.com.rmu.restapiendereco.shared.infra.exception.RegistroNaoEncontradoEx
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.SpringApplicationConfiguration
 import spock.lang.Specification
+import spock.lang.Unroll
 
 /**
  * Created by rodrigomunhoz on 02/09/15.
@@ -28,10 +29,9 @@ class BuscarEnderecoPorCepSpec extends Specification {
     }
 
     def "Buscar endereço usando CEP inválido."() {
-        setup:
+        given: "Que o sistema valide o formato do CEP"
         def cepInvalido = "1304500"
-        when:
-        "Eu buscar um endereço informando o CEP $cepInvalido"
+        when: "Eu buscar um endereço informando o CEP 1304500"
         enderecoService.buscarPorCep(cepInvalido)
         then: "Deve ser lançada exceção informando que o CEP é inválido"
         thrown(CepInvalidoException)
@@ -41,7 +41,7 @@ class BuscarEnderecoPorCepSpec extends Specification {
         given: "Eu tenho endereço cadastrado para o CEP 13045909"
         String cepProcurado = "99999990"
         when:
-        "Eu buscar endereço pelo CEP $cepProcurado"
+        "Eu buscar endereço pelo CEP 99999990"
         enderecoService.buscarPorCep(cepProcurado)
         then: "Deve lançar exceçãoinformando que não foi encontrado registro"
         thrown(RegistroNaoEncontradoException)
@@ -51,7 +51,7 @@ class BuscarEnderecoPorCepSpec extends Specification {
         given: "Eu tenho endereço cadastrado para o CEP 13045909"
         String cepProcurado = "13045909"
         when:
-        "Eu buscar endereço pelo CEP $cepProcurado"
+        "Eu buscar endereço pelo CEP 13045909"
         Endereco endereco = enderecoService.buscarPorCep(cepProcurado)
         then: "Deve retornar o endereco encontrado"
         endereco.cep.codigo == cepProcurado
@@ -61,16 +61,15 @@ class BuscarEnderecoPorCepSpec extends Specification {
         given: "Eu tenho endereço cadastrado para o CEP 13045909"
         String cepProcurado = "13.045-909"
         when:
-        "Eu buscar endereço pelo CEP $cepProcurado"
+        "Eu buscar endereço pelo CEP 13.045-909"
         Endereco endereco = enderecoService.buscarPorCep(cepProcurado)
         then: "Deve retornar o endereco encontrado"
         endereco.cep.codigo == cepProcurado.replaceAll("\\.", "").replaceAll("-", "")
     }
-
+    @Unroll
     def "Buscar endereço por CEP mais genérico quando o buscado não estiver no cadastro. (CEP BUSCADO = #cepBuscado / CEP RETORNADO = #cepRetornado)"(cepBuscado, cepRetornado) {
         given: "Eu tenha endereços cadastrados para os CEPs (00000000, 10000000, 13000000, 13100000, 13040000, 13045000, 13046100, 13047120)"
-        when:
-        "Eu buscar endereço pelo CEP $cepBuscado"
+        when: "Eu buscar endereço pelo CEP #cepBuscado"
         Endereco endereco = enderecoService.buscarPorCep(cepBuscado)
         then: "Deve retornar o endereco encontrado"
         endereco.cep.codigo == cepRetornado.replaceAll("\\.", "").replaceAll("-", "")
