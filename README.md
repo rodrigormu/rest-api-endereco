@@ -41,7 +41,31 @@ associados a clientes, estão estáticos na aplicação em um MAP. Os CEPs dispo
 
 ## Exemplos de uso da Api ##
 
-### Criar um novo endereço ###
+### Endereço Geral ###
+
+#### Buscar endereço por CEP ####
+
+* http GET - http://localhost:8080/api/enderecos?cep=13045909
+
+* retorna:
+```
+#!json
+{
+  "cep": {
+    "codigo": "13045909"
+  },
+  "rua": "Rua do cep 13045909",
+  "bairro": "Bairro do cep 13045909",
+  "cidade": "Cidade do cep 13045909",
+  "estado": "Estado do cep 13045909"
+}
+```
+* retorna http 404 se não encontrar endereço para o CEP
+* retorna http 400 se o CEP for inválido
+
+### CRUD de endereço do cliente ###
+
+#### Criar um novo endereço ####
 
 * http POST - http://localhost:8080/api/enderecoscliente
 * json body:
@@ -75,6 +99,7 @@ associados a clientes, estão estáticos na aplicação em um MAP. Os CEPs dispo
   "estado": "SP"
 }
 ```
+* retorna http 400 se violar alguma regra de obrigatoriedade ou formato.
 
 ### Buscar endereço por Id ###
 
@@ -96,24 +121,7 @@ associados a clientes, estão estáticos na aplicação em um MAP. Os CEPs dispo
   "estado": "SP"
 }
 ```
-
-### Buscar endereço por cep ###
-
-* http GET - http://localhost:8080/api/enderecos?cep=13045909
-
-* retorna:
-```
-#!json
-{
-  "cep": {
-    "codigo": "13045909"
-  },
-  "rua": "Rua do cep 13045909",
-  "bairro": "Bairro do cep 13045909",
-  "cidade": "Cidade do cep 13045909",
-  "estado": "Estado do cep 13045909"
-}
-```
+* retorna http 404 se não encontrar endereço do cliente
 
 ### Atualizar endereço existente ###
 
@@ -133,7 +141,9 @@ associados a clientes, estão estáticos na aplicação em um MAP. Os CEPs dispo
   "estado": "SP"
 }
 ```
-* retorna http 200 com o endereço atualizado:
+* retorna http 200 com o endereço atualizado
+* retorna http 404 se não encontrar endereço do cliente
+* retorna http 400 se violar alguma regra de obrigatoriedade ou formato.
 ```
 #!json
 {
@@ -155,3 +165,4 @@ associados a clientes, estão estáticos na aplicação em um MAP. Os CEPs dispo
 * http DELETE - http://localhost:8080/api/enderecoscliente/1
 
 * returns http 204
+* retorna http 404 se não encontrar endereço do cliente
