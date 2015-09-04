@@ -17,13 +17,13 @@ suportadas por uma quarta camada vertical de infraestrutura.
 * Spring Boot com Maven
 * Jax-RS fornecido pelo Jersey para os serviços REST
 * Spring data JPA para persistir num banco relacional (H2 em memória foi o escolhido)
-* JDK 1.7
+* JDK 1.7+
 * Groovy 2.4 é necessário para execução dos testes BDD que foram escritos usando Spock 
 * Tomcat Embarcado
 
 ### Pré Requisitos ###
 * Git
-* JDK 1.7
+* JDK 1.7+
 * Maven
 * Groovy 2.4
 
@@ -170,5 +170,5 @@ clicando [aqui](https://github.com/rodrigormu/rest-api-endereco/tree/master/samp
 
 * http DELETE - http://localhost:8080/api/enderecoscliente/1
 
-* returns http 204
+* returna http 204
 * retorna http 404 se não encontrar endereço do cliente
