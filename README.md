@@ -17,13 +17,13 @@ suportadas por uma quarta camada vertical de infraestrutura.
 * Spring Boot com Maven
 * Jax-RS fornecido pelo Jersey para os serviços REST
 * Spring data JPA para persistir num banco relacional (H2 em memória foi o escolhido)
-* JDK 1.7
+* JDK 1.8
 * Groovy 2.4 é necessário para execução dos testes BDD que foram escritos usando Spock 
 * Tomcat Embarcado
 
 ### Pré Requisitos ###
 * Git
-* JDK 1.7
+* JDK 1.8
 * Maven
 * Groovy 2.4
 
