@@ -34,7 +34,7 @@ associados a clientes, estão estáticos na aplicação em um MAP. Os CEPs dispo
 "10000000", "13000000", "13100000", "13040000", "13045000", "13046100", "13047120", "13045909"
 
 ### Executar localmente ###
-> mvn package -DskipTests && java -jar target/rest-api-endereco-0.0.1.jar
+> mvn package -DskipTests && java -jar target/rest-api-endereco-0.1.0.jar
 
 ### Executar testes ###
 > mvn test
