@@ -39,7 +39,7 @@ associados a clientes, estão estáticos na aplicação em um MAP. Os CEPs dispo
 ### Executar testes ###
 > mvn test
 
-## Api samples ##
+## Exemplos de uso da Api ##
 
 ### Criar um novo endereço ###
 
